@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <title>Ninja Gold</title>
+    </head>
+    <body>
+    <div class="container">
+        <h1>Your Gold: {{ session['your_gold'] }}</h1>
+        
+        <div class="location" style="display: inline-block;">
+            <h3>Farm</h3>
+            <h3>(earns 10-20 gold)</h3>
+            <form action='/process_money' method='post'>
+                <input type="hidden" name="building" value="farm">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+
+        <div class="location" style="display: inline-block;">
+            <h3>Cave</h3>
+            <h3>(earns 5-10 gold)</h3>
+            <form action='/process_money' method='post'>
+                <input type="hidden" name="building" value="cave">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+
+        <div class="location" style="display: inline-block;">
+            <h3>House</h3>
+            <h3>(earns 2-5 gold)</h3>
+            <form action='/process_money' method='post'>
+                <input type="hidden" name="building" value="house">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        
+        <div class="location" style="display: inline-block;">
+            <h3>Casino</h3>
+            <h3>(earns/takes 0-50 gold)</h3>
+            <form action='/process_money' method='post'>
+                <input type="hidden" name="building" value="casino">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+
+        <div>
+
+        </div>
+
+        <div id="activity">
+            <h4>{{ session['activity'] }}</h4>
+        </div>
+    </div>
+    </body>
+</html>
